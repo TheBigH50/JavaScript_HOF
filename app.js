@@ -43,3 +43,11 @@ let users = [
     isActive: false,
   },
 ];
+
+function forEach(list, action) {
+    for (let i = 0; i < list.length; i++) {
+action(list[i], 1, list)
+    };
+};
+
+forEach(users, )
