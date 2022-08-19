@@ -44,10 +44,4 @@ let users = [
   },
 ];
 
-function forEach(list, action) {
-    for (let i = 0; i < list.length; i++) {
-action(list[i], 1, list)
-    };
-};
-
-forEach(users, )
+users.forEach(users => console.log(`name: ${users.name}`));
