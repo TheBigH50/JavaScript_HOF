@@ -59,3 +59,29 @@ function isActive(user) {
 let filteredUsers = users.filter(isActive);
 
 console.log(filteredUsers);
+
+//Exe5
+
+// users.sort((a, b) => b.score - a.score);
+// console.log(users)
+
+function sortDesc(user1, user2) {
+  if (user1.score < user2.score) {
+    return 1
+  } else {
+    return -1
+  }
+}
+
+users.sort(sortDesc);
+console.log(users)
+
+//Exe6
+
+function reduceSum(sum, user) {
+  return sum + user.score
+}
+
+let sumScores = users.reduce(reduceSum, 0);
+
+console.log(`Avg user score: ${sumScores / users.length}`);
