@@ -44,4 +44,18 @@ let users = [
   },
 ];
 
-users.forEach(users => console.log(`name: ${users.name}`));
+users.forEach((users) => console.log(`name: ${users.name}`));
+
+//Exe3
+
+
+//Exe4
+
+function isActive(user) {
+
+  return user.isActive === true;
+}
+
+let filteredUsers = users.filter(isActive);
+
+console.log(filteredUsers);
