@@ -48,6 +48,10 @@ users.forEach((users) => console.log(`name: ${users.name}`));
 
 //Exe3
 
+users.map((user) => { return user.name, user.score});
+console.log(users)
+  
+
 
 //Exe4
 
