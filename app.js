@@ -23,38 +23,88 @@ let users = [
     age: 50,
     score: 85,
     isActive: false,
+    gender: "male",
+  },
+  {
+    name: "Fredet",
+    age: 50,
+    score: 85,
+    isActive: false,
+    gender: "female",
+  },
+  {
+    name: "Samantha",
+    age: 38,
+    score: 94,
+    isActive: true,
+    gender: "female",
   },
   {
     name: "Sam",
     age: 38,
     score: 94,
     isActive: true,
+    gender: "male",
   },
   {
     name: "Merry",
     age: 36,
     score: 82,
     isActive: true,
+    gender: "male",
+  },
+  {
+    name: "Pippet",
+    age: 26,
+    score: 77,
+    isActive: false,
+    gender: "female",
   },
   {
     name: "Pippin",
     age: 26,
     score: 77,
     isActive: false,
+    gender: "male",
+  },
+
+  {
+    name: "Merrilynn",
+    age: 36,
+    score: 82,
+    isActive: true,
+    gender: "female",
   },
 ];
+
+
+function sortByGenderAndScore(users) {
+  return users.sort(function (a, b) {
+      if (a.gender < b.gender) {
+        return -1;
+      } else if (a.gender > b.gender) {
+        return 1;
+      } else {
+        return b.score - a.score;
+      }
+    })
+    .map(function (user) {
+      return { name: user.name, score: user.score };
+    });
+}
 
 users.forEach((users) => console.log(`name: ${users.name}`));
 
 //Exe3
 
-const smallUsers = users.map(({name, score}) => {return {name, score}});
+const smallUsers = users.map(({ name, score }) => {
+  return { name, score };
+});
 console.log(smallUsers);
 
 //Exe4
 
 function isActive(user) {
-
   return user.isActive === true;
 }
 
@@ -69,19 +119,19 @@ console.log(filteredUsers);
 
 function sortDesc(user1, user2) {
   if (user1.score < user2.score) {
-    return 1
+    return 1;
   } else {
-    return -1
+    return -1;
   }
 }
 
 users.sort(sortDesc);
-console.log(users)
+console.log(users);
 
 //Exe6
 
 function reduceSum(sum, user) {
-  return sum + user.score
+  return sum + user.score;
 }
 
 let sumScores = users.reduce(reduceSum, 0);
