@@ -93,6 +93,8 @@ function sortByGenderAndScore(users) {
     });
 }
 
+console.log(sortByGenderAndScore(users));
+
 users.forEach((users) => console.log(`name: ${users.name}`));
 
 //Exe3
