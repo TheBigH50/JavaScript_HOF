@@ -1,59 +1,17 @@
-let users = [
-    {
-      name: "Frodo",
-      age: 50,
-      score: 85,
-      isActive: false,
-      gender: "male",
-    },
-    {
-      name: "Fredet",
-      age: 50,
-      score: 89,
-      isActive: false,
-      gender: "female",
-    },
-    {
-      name: "Samantha",
-      age: 38,
-      score: 91,
-      isActive: true,
-      gender: "female",
-    },
-    {
-      name: "Sam",
-      age: 38,
-      score: 94,
-      isActive: true,
-      gender: "male",
-    },
-    {
-      name: "Merry",
-      age: 36,
-      score: 82,
-      isActive: true,
-      gender: "male",
-    },
-    {
-      name: "Pippet",
-      age: 26,
-      score: 65,
-      isActive: false,
-      gender: "female",
-    },
-    {
-      name: "Pippin",
-      age: 26,
-      score: 77,
-      isActive: false,
-      gender: "male",
-    },
-  
-    {
-      name: "Merrilynn",
-      age: 36,
-      score: 87,
-      isActive: true,
-      gender: "female",
-    },
-  ];
+function sortByGenderAndScore(users) {
+  let inLine = users.sort(function (a, b) {
+      if (a.gender < b.gender) {
+        return -1;
+      } else if (a.gender > b.gender) {
+        return 1;
+      } else {
+        return b.score - a.score;
+      }
+    })
+    .map(function (user) {
+      return { name: user.name, score: user.score };
+    });
+    return inLine;
+}
+
+console.log(sortByGenderAndScore(users));

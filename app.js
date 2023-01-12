@@ -79,7 +79,7 @@ let users = [
 
 
 function sortByGenderAndScore(users) {
-  return users.sort(function (a, b) {
+  let inLine = users.sort(function (a, b) {
       if (a.gender < b.gender) {
         return -1;
       } else if (a.gender > b.gender) {
@@ -91,6 +91,7 @@ function sortByGenderAndScore(users) {
     .map(function (user) {
       return { name: user.name, score: user.score };
     });
+    return inLine;
 }
 
 console.log(sortByGenderAndScore(users));
